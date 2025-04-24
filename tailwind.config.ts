@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Tunisian themed colors
+				tunisia: {
+					red: '#E30613', // Red from Tunisian flag
+					white: '#FFFFFF', // White from Tunisian flag
+					correct: '#4CAF50', // Green for correct letters
+					present: '#FFC107', // Yellow/amber for present letters
+					absent: '#9E9E9E', // Grey for absent letters
+					keyboard: '#E8E8E8', // Light grey for keyboard
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pop': {
+					'0%': { transform: 'scale(0.8)', opacity: '0' },
+					'40%': { transform: 'scale(1.1)', opacity: '1' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'flip': {
+					'0%': { transform: 'rotateX(0)' },
+					'50%': { transform: 'rotateX(90deg)' },
+					'100%': { transform: 'rotateX(0)' }
+				},
+				'shake': {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
+					'20%, 40%, 60%, 80%': { transform: 'translateX(5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pop': 'pop 0.3s ease-in-out',
+				'flip': 'flip 0.5s ease-in-out',
+				'shake': 'shake 0.5s ease-in-out'
 			}
 		}
 	},
