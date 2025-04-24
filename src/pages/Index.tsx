@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import GameBoard from "@/components/GameBoard";
 import Keyboard from "@/components/Keyboard";
@@ -10,9 +10,8 @@ import { getRandomWord, isValidWord } from "@/data/tunisianWords";
 
 const Index = () => {
   // Game state
-  const [targetWord, setTargetWord] = useState({ arabic: "", latin: "" });
+  const [targetWord, setTargetWord] = useState({ arabic: "" });
   const [wordLength, setWordLength] = useState(5);
-  const [showArabic, setShowArabic] = useState(false);
   const [guesses, setGuesses] = useState<string[]>([]);
   const [currentGuess, setCurrentGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
@@ -57,7 +56,6 @@ const Index = () => {
     const newTarget = getRandomWord(wordLength);
     setTargetWord({
       arabic: newTarget.arabic,
-      latin: newTarget.latin.toUpperCase()
     });
     setGuesses([]);
     setCurrentGuess("");
@@ -87,13 +85,15 @@ const Index = () => {
       newStats.guessDistribution[guesses.length] += 1;
 
       toast.success("Great job! 🎉", {
-        description: `You found the word in ${guesses.length + 1} ${guesses.length === 0 ? 'try' : 'tries'}!`,
+        description: `You found the word in ${guesses.length + 1} ${
+          guesses.length === 0 ? "try" : "tries"
+        }!`,
       });
     } else {
       newStats.currentStreak = 0;
 
       toast.error("Game over!", {
-        description: `The word was ${targetWord.latin}.`,
+        description: `The word was ${targetWord.arabic}.`,
       });
     }
 
@@ -109,14 +109,26 @@ const Index = () => {
       if (currentGuess.length !== targetWord.arabic.length) {
         toast.error(`الكلمة يجب أن تكون ${targetWord.arabic.length} حروف!`);
         document.querySelector(".game-board")?.classList.add("animate-shake");
-        setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
+        setTimeout(
+          () =>
+            document
+              .querySelector(".game-board")
+              ?.classList.remove("animate-shake"),
+          500
+        );
         return;
       }
 
       if (!isValidWord(currentGuess, wordLength)) {
         toast.error("الكلمة غير موجودة في القائمة!");
         document.querySelector(".game-board")?.classList.add("animate-shake");
-        setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
+        setTimeout(
+          () =>
+            document
+              .querySelector(".game-board")
+              ?.classList.remove("animate-shake"),
+          500
+        );
         return;
       }
 
@@ -128,7 +140,7 @@ const Index = () => {
         handleGameEnd(true);
         return;
       }
-      
+
       if (newGuesses.length === 6) {
         handleGameEnd(false);
         return;
@@ -151,8 +163,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <header className="bg-tunisia-red text-white py-4 shadow-md">
         <div className="container max-w-lg mx-auto px-4 flex justify-between items-center">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             onClick={() => setShowHowToPlay(true)}
             className="text-white hover:bg-red-700"
           >
@@ -160,20 +172,20 @@ const Index = () => {
           </Button>
           <h1 className="text-2xl font-bold tracking-wide text-center">
             <div>TUNISIAN WORDLE</div>
-            <div className="text-lg font-normal mt-1 text-center" dir="rtl">
+            {/* <div className="text-lg font-normal mt-1 text-center" dir="rtl">
               {targetWord.arabic}
-            </div>
+            </div> */}
           </h1>
           <div className="flex gap-2">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => setShowSettings(true)}
               className="text-white hover:bg-red-700"
             >
               ⚙️
             </Button>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => setShowStats(true)}
               className="text-white hover:bg-red-700"
             >
@@ -225,9 +237,7 @@ const Index = () => {
         isOpen={showSettings}
         onClose={() => setShowSettings(false)}
         wordLength={wordLength}
-        showArabic={showArabic}
         onWordLengthChange={handleWordLengthChange}
-        onShowArabicChange={setShowArabic}
       />
     </div>
   );

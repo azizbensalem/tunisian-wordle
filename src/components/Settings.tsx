@@ -1,25 +1,31 @@
 import React from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
 interface SettingsProps {
   isOpen: boolean;
   onClose: () => void;
   wordLength: number;
-  showArabic: boolean;
   onWordLengthChange: (length: number) => void;
-  onShowArabicChange: (show: boolean) => void;
 }
 
 const Settings: React.FC<SettingsProps> = ({
   isOpen,
   onClose,
   wordLength,
-  showArabic,
   onWordLengthChange,
-  onShowArabicChange,
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -27,12 +33,12 @@ const Settings: React.FC<SettingsProps> = ({
         <DialogHeader>
           <DialogTitle>Game Settings</DialogTitle>
         </DialogHeader>
-        
+
         <div className="space-y-6">
           <div className="space-y-2">
             <Label>Word Length</Label>
-            <Select 
-              value={wordLength.toString()} 
+            <Select
+              value={wordLength.toString()}
               onValueChange={(value) => onWordLengthChange(parseInt(value))}
             >
               <SelectTrigger>
@@ -46,14 +52,6 @@ const Settings: React.FC<SettingsProps> = ({
                 ))}
               </SelectContent>
             </Select>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <Label>Show Latin Script</Label>
-            <Switch
-              checked={showArabic}
-              onCheckedChange={onShowArabicChange}
-            />
           </div>
         </div>
       </DialogContent>
