@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +7,7 @@ interface GameBoardProps {
   guesses: string[];
   currentGuess: string;
   targetWord: string;
+  wordLength: number;
 }
 
 interface CellProps {
@@ -44,6 +44,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
   guesses,
   currentGuess,
   targetWord,
+  wordLength,
 }) => {
   const getEvaluations = (guess: string): CellState[] => {
     const evaluation: CellState[] = Array(5).fill("absent");
@@ -97,7 +98,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
     const currentGuessArray = currentGuess.split("");
     const currentRow = [];
     
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < wordLength; i++) {
       currentRow.push(
         <Cell
           key={`current-${i}`}
@@ -118,7 +119,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
     for (let i = guesses.length + 1; i < 6; i++) {
       rows.push(
         <div key={`empty-${i}`} className="flex gap-1 mb-2">
-          {Array(5)
+          {Array(wordLength)
             .fill(0)
             .map((_, j) => (
               <Cell key={`empty-${i}-${j}`} value="" state="empty" position={j} />

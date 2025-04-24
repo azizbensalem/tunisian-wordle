@@ -1,22 +1,25 @@
-
 import React, { useState, useEffect } from "react";
 import { toast } from "sonner";
 import GameBoard from "@/components/GameBoard";
 import Keyboard from "@/components/Keyboard";
 import GameStats from "@/components/GameStats";
 import HowToPlay from "@/components/HowToPlay";
+import Settings from "@/components/Settings";
 import { Button } from "@/components/ui/button";
 import { getRandomWord, isValidWord } from "@/data/tunisianWords";
 
 const Index = () => {
   // Game state
-  const [targetWord, setTargetWord] = useState("");
+  const [targetWord, setTargetWord] = useState({ arabic: "", latin: "" });
+  const [wordLength, setWordLength] = useState(5);
+  const [showArabic, setShowArabic] = useState(false);
   const [guesses, setGuesses] = useState<string[]>([]);
   const [currentGuess, setCurrentGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
   const [hasWon, setHasWon] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [showHowToPlay, setShowHowToPlay] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   // Stats
   const [stats, setStats] = useState(() => {
@@ -49,15 +52,21 @@ const Index = () => {
     localStorage.setItem("tunisian-wordle-stats", JSON.stringify(stats));
   }, [stats]);
 
-  // Start a new game
+  // Initialize game with new word length
   const startNewGame = () => {
-    const newTarget = getRandomWord();
+    const newTarget = getRandomWord(wordLength);
     setTargetWord(newTarget);
     setGuesses([]);
     setCurrentGuess("");
     setGameOver(false);
     setHasWon(false);
-    console.log("New game started. Word to guess:", newTarget); // For debugging
+    console.log("New game started. Word to guess:", newTarget.latin); // For debugging
+  };
+
+  // Handle word length change
+  const handleWordLengthChange = (length: number) => {
+    setWordLength(length);
+    startNewGame();
   };
 
   // Handle game completion
@@ -81,7 +90,7 @@ const Index = () => {
       newStats.currentStreak = 0;
 
       toast.error("Game over!", {
-        description: `The word was ${targetWord}.`,
+        description: `The word was ${targetWord.latin}.`,
       });
     }
 
@@ -89,20 +98,19 @@ const Index = () => {
     setTimeout(() => setShowStats(true), 1500);
   };
 
-  // Handle keyboard input
+  // Handle keyboard input with word length validation
   const handleKeyPress = (key: string) => {
     if (gameOver) return;
 
     if (key === "Enter") {
-      // Submit guess
-      if (currentGuess.length !== 5) {
-        toast.error("Word must be 5 letters!");
+      if (currentGuess.length !== wordLength) {
+        toast.error(`Word must be ${wordLength} letters!`);
         document.querySelector(".game-board")?.classList.add("animate-shake");
         setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
         return;
       }
 
-      if (!isValidWord(currentGuess)) {
+      if (!isValidWord(currentGuess, wordLength)) {
         toast.error("Not in word list!");
         document.querySelector(".game-board")?.classList.add("animate-shake");
         setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
@@ -113,23 +121,19 @@ const Index = () => {
       setGuesses(newGuesses);
       setCurrentGuess("");
 
-      // Check if the player won
-      if (currentGuess.toUpperCase() === targetWord) {
+      if (currentGuess.toUpperCase() === targetWord.latin) {
         handleGameEnd(true);
         return;
       }
       
-      // Check if the player lost
       if (newGuesses.length === 6) {
         handleGameEnd(false);
         return;
       }
     } else if (key === "Backspace") {
-      // Delete last character
       setCurrentGuess((prev) => prev.slice(0, -1));
     } else {
-      // Add letter (if not already 5 letters)
-      if (currentGuess.length < 5) {
+      if (currentGuess.length < wordLength) {
         setCurrentGuess((prev) => prev + key);
       }
     }
@@ -156,7 +160,7 @@ const Index = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [currentGuess, guesses, gameOver, targetWord]);
+  }, [currentGuess, guesses, gameOver, targetWord, wordLength]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -170,14 +174,30 @@ const Index = () => {
           >
             ?
           </Button>
-          <h1 className="text-2xl font-bold tracking-wide">TUNISIAN WORDLE</h1>
-          <Button 
-            variant="ghost" 
-            onClick={() => setShowStats(true)}
-            className="text-white hover:bg-red-700"
-          >
-            📊
-          </Button>
+          <h1 className="text-2xl font-bold tracking-wide">
+            TUNISIAN WORDLE
+            {showArabic && targetWord.arabic && (
+              <div className="text-lg font-normal mt-1 text-center">
+                {targetWord.arabic}
+              </div>
+            )}
+          </h1>
+          <div className="flex gap-2">
+            <Button 
+              variant="ghost" 
+              onClick={() => setShowSettings(true)}
+              className="text-white hover:bg-red-700"
+            >
+              ⚙️
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => setShowStats(true)}
+              className="text-white hover:bg-red-700"
+            >
+              📊
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -187,7 +207,8 @@ const Index = () => {
           <GameBoard
             guesses={guesses}
             currentGuess={currentGuess}
-            targetWord={targetWord}
+            targetWord={targetWord.latin}
+            wordLength={wordLength}
           />
         </div>
 
@@ -196,7 +217,7 @@ const Index = () => {
           <Keyboard
             onKeyPress={handleKeyPress}
             guesses={guesses}
-            targetWord={targetWord}
+            targetWord={targetWord.latin}
           />
         </div>
       </main>
@@ -213,13 +234,22 @@ const Index = () => {
         stats={stats}
         hasWon={hasWon}
         guessCount={guesses.length}
-        targetWord={targetWord}
+        targetWord={targetWord.latin}
         handleNewGame={startNewGame}
       />
 
       <HowToPlay
         isOpen={showHowToPlay}
         onClose={() => setShowHowToPlay(false)}
+      />
+
+      <Settings
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        wordLength={wordLength}
+        showArabic={showArabic}
+        onWordLengthChange={handleWordLengthChange}
+        onShowArabicChange={setShowArabic}
       />
     </div>
   );
