@@ -32,17 +32,17 @@ const Keyboard: React.FC<KeyboardProps> = ({
     for (const guess of guesses) {
       const keyPositions = guess
         .split("")
-        .map((char, index) => (char === key ? index : -1))
+        .map((char, index) => (char.toUpperCase() === key ? index : -1))
         .filter((pos) => pos !== -1);
 
       for (const position of keyPositions) {
-        if (targetWord[position] === key) {
+        if (targetWord[position]?.toUpperCase() === key) {
           return "correct"; // If any instance is correct, the key is correct
-        } else if (targetWord.includes(key)) {
+        } else if (targetWord.toUpperCase().includes(key)) {
           state = "present"; // Only set to present if not already found correct
         } else {
           // Only set to absent if not already found present or correct
-          if (state !== "present" && state !== "correct") {
+          if (state !== "present") {
             state = "absent";
           }
         }
