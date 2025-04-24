@@ -1,7 +1,6 @@
 {
   "homepage": "https://azizbensalem.github.io/tunisian-wordle",
-  "name": "vite_react_shadcn_ts",
-  "private": true,
+  "name": "tunisian-wordle",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
