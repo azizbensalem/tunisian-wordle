@@ -63,7 +63,7 @@ const Index = () => {
     setCurrentGuess("");
     setGameOver(false);
     setHasWon(false);
-    console.log("New game started. Word to guess:", newTarget.arabic); // For debugging
+    console.log("New game started. Word to guess:", newTarget.arabic);
   };
 
   // Handle word length change
@@ -106,8 +106,8 @@ const Index = () => {
     if (gameOver) return;
 
     if (key === "Enter") {
-      if (currentGuess.length !== wordLength) {
-        toast.error(`الكلمة يجب أن تكون ${wordLength} حروف!`);
+      if (currentGuess.length !== targetWord.arabic.length) {
+        toast.error(`الكلمة يجب أن تكون ${targetWord.arabic.length} حروف!`);
         document.querySelector(".game-board")?.classList.add("animate-shake");
         setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
         return;
@@ -136,7 +136,7 @@ const Index = () => {
     } else if (key === "Backspace") {
       setCurrentGuess((prev) => prev.slice(0, -1));
     } else {
-      if (currentGuess.length < wordLength) {
+      if (currentGuess.length < targetWord.arabic.length) {
         setCurrentGuess((prev) => prev + key);
       }
     }

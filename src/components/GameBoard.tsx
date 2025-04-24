@@ -1,3 +1,4 @@
+
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -80,7 +81,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
     const evaluation = getEvaluations(guess);
 
     rows.push(
-      <div key={`guess-${i}`} className="flex gap-1 mb-2">
+      <div key={`guess-${i}`} className="flex gap-1 mb-2" dir="rtl">
         {guess.split("").map((char, j) => (
           <Cell
             key={`guess-${i}-${j}`}
@@ -98,7 +99,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
     const currentGuessArray = currentGuess.split("");
     const currentRow = [];
     
-    for (let i = 0; i < wordLength; i++) {
+    for (let i = 0; i < targetWord.length; i++) {
       currentRow.push(
         <Cell
           key={`current-${i}`}
@@ -110,7 +111,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
     }
     
     rows.push(
-      <div key="current-guess" className="flex gap-1 mb-2">
+      <div key="current-guess" className="flex gap-1 mb-2" dir="rtl">
         {currentRow}
       </div>
     );
@@ -118,8 +119,8 @@ const GameBoard: React.FC<GameBoardProps> = ({
     // Empty rows
     for (let i = guesses.length + 1; i < 6; i++) {
       rows.push(
-        <div key={`empty-${i}`} className="flex gap-1 mb-2">
-          {Array(wordLength)
+        <div key={`empty-${i}`} className="flex gap-1 mb-2" dir="rtl">
+          {Array(targetWord.length)
             .fill(0)
             .map((_, j) => (
               <Cell key={`empty-${i}-${j}`} value="" state="empty" position={j} />
@@ -133,3 +134,4 @@ const GameBoard: React.FC<GameBoardProps> = ({
 };
 
 export default GameBoard;
+
