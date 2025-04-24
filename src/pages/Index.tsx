@@ -107,24 +107,24 @@ const Index = () => {
 
     if (key === "Enter") {
       if (currentGuess.length !== wordLength) {
-        toast.error(`Word must be ${wordLength} letters!`);
+        toast.error(`الكلمة يجب أن تكون ${wordLength} حروف!`);
         document.querySelector(".game-board")?.classList.add("animate-shake");
         setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
         return;
       }
 
       if (!isValidWord(currentGuess, wordLength)) {
-        toast.error("Not in word list!");
+        toast.error("الكلمة غير موجودة في القائمة!");
         document.querySelector(".game-board")?.classList.add("animate-shake");
         setTimeout(() => document.querySelector(".game-board")?.classList.remove("animate-shake"), 500);
         return;
       }
 
-      const newGuesses = [...guesses, currentGuess.toUpperCase()];
+      const newGuesses = [...guesses, currentGuess];
       setGuesses(newGuesses);
       setCurrentGuess("");
 
-      if (currentGuess.toUpperCase() === targetWord.latin) {
+      if (currentGuess === targetWord.arabic) {
         handleGameEnd(true);
         return;
       }
@@ -144,26 +144,8 @@ const Index = () => {
 
   // Handle physical keyboard
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (gameOver) return;
-
-      if (e.key === "Enter") {
-        handleKeyPress("Enter");
-      } else if (e.key === "Backspace") {
-        handleKeyPress("Backspace");
-      } else {
-        const key = e.key.toUpperCase();
-        if (/^[A-Z]$/.test(key)) {
-          handleKeyPress(key);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [currentGuess, guesses, gameOver, targetWord, wordLength]);
+    return () => {};
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -206,7 +188,7 @@ const Index = () => {
           <GameBoard
             guesses={guesses}
             currentGuess={currentGuess}
-            targetWord={targetWord.latin}
+            targetWord={targetWord.arabic}
             wordLength={wordLength}
           />
         </div>
@@ -215,7 +197,7 @@ const Index = () => {
           <Keyboard
             onKeyPress={handleKeyPress}
             guesses={guesses}
-            targetWord={targetWord.latin}
+            targetWord={targetWord.arabic}
           />
         </div>
       </main>
@@ -230,7 +212,7 @@ const Index = () => {
         stats={stats}
         hasWon={hasWon}
         guessCount={guesses.length}
-        targetWord={targetWord.latin}
+        targetWord={targetWord.arabic}
         handleNewGame={startNewGame}
       />
 

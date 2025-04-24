@@ -16,9 +16,9 @@ const Keyboard: React.FC<KeyboardProps> = ({
   targetWord,
 }) => {
   const rows = [
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-    ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Backspace"],
+    ["ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح", "ج"],
+    ["ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك"],
+    ["Enter", "ظ", "ط", "ذ", "د", "ز", "ر", "و", "ة", "Backspace"],
   ];
 
   const getKeyState = (key: string): KeyState => {
@@ -32,16 +32,15 @@ const Keyboard: React.FC<KeyboardProps> = ({
     for (const guess of guesses) {
       const keyPositions = guess
         .split("")
-        .map((char, index) => (char.toUpperCase() === key ? index : -1))
+        .map((char, index) => (char === key ? index : -1))
         .filter((pos) => pos !== -1);
 
       for (const position of keyPositions) {
-        if (targetWord[position]?.toUpperCase() === key) {
-          return "correct"; // If any instance is correct, the key is correct
-        } else if (targetWord.toUpperCase().includes(key)) {
-          state = "present"; // Only set to present if not already found correct
+        if (targetWord[position] === key) {
+          return "correct";
+        } else if (targetWord.includes(key)) {
+          state = "present";
         } else {
-          // Only set to absent if not already found present or correct
           if (state !== "present") {
             state = "absent";
           }
@@ -53,7 +52,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-lg">
+    <div className="w-full max-w-lg" dir="rtl">
       {rows.map((row, rowIndex) => (
         <div
           key={`row-${rowIndex}`}
@@ -91,3 +90,4 @@ const Keyboard: React.FC<KeyboardProps> = ({
 };
 
 export default Keyboard;
+
