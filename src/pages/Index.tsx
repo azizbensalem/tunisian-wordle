@@ -55,12 +55,15 @@ const Index = () => {
   // Initialize game with new word length
   const startNewGame = () => {
     const newTarget = getRandomWord(wordLength);
-    setTargetWord(newTarget);
+    setTargetWord({
+      arabic: newTarget.arabic,
+      latin: newTarget.latin.toUpperCase()
+    });
     setGuesses([]);
     setCurrentGuess("");
     setGameOver(false);
     setHasWon(false);
-    console.log("New game started. Word to guess:", newTarget.latin); // For debugging
+    console.log("New game started. Word to guess:", newTarget.arabic); // For debugging
   };
 
   // Handle word length change
@@ -164,7 +167,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Header */}
       <header className="bg-tunisia-red text-white py-4 shadow-md">
         <div className="container max-w-lg mx-auto px-4 flex justify-between items-center">
           <Button 
@@ -174,13 +176,11 @@ const Index = () => {
           >
             ?
           </Button>
-          <h1 className="text-2xl font-bold tracking-wide">
-            TUNISIAN WORDLE
-            {showArabic && targetWord.arabic && (
-              <div className="text-lg font-normal mt-1 text-center">
-                {targetWord.arabic}
-              </div>
-            )}
+          <h1 className="text-2xl font-bold tracking-wide text-center">
+            <div>TUNISIAN WORDLE</div>
+            <div className="text-lg font-normal mt-1 text-center" dir="rtl">
+              {targetWord.arabic}
+            </div>
           </h1>
           <div className="flex gap-2">
             <Button 
@@ -201,7 +201,6 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Game Board */}
       <main className="flex-1 container max-w-lg mx-auto px-4 py-8 flex flex-col items-center justify-between gap-8">
         <div className="game-board w-full flex justify-center">
           <GameBoard
@@ -212,7 +211,6 @@ const Index = () => {
           />
         </div>
 
-        {/* Keyboard */}
         <div className="w-full">
           <Keyboard
             onKeyPress={handleKeyPress}
@@ -222,12 +220,10 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-100 py-2 text-center text-sm text-gray-600">
         <p>Tunisian Wordle &copy; 2025</p>
       </footer>
 
-      {/* Modals */}
       <GameStats
         isOpen={showStats}
         onClose={() => setShowStats(false)}

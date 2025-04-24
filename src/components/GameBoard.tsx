@@ -47,7 +47,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
   wordLength,
 }) => {
   const getEvaluations = (guess: string): CellState[] => {
-    const evaluation: CellState[] = Array(5).fill("absent");
+    const evaluation: CellState[] = Array(wordLength).fill("absent");
     const targetChars = targetWord.split("");
 
     // First, mark correct ones

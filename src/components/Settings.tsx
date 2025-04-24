@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -50,7 +49,7 @@ const Settings: React.FC<SettingsProps> = ({
           </div>
 
           <div className="flex items-center justify-between">
-            <Label>Show Arabic Script</Label>
+            <Label>Show Latin Script</Label>
             <Switch
               checked={showArabic}
               onCheckedChange={onShowArabicChange}
@@ -63,4 +62,3 @@ const Settings: React.FC<SettingsProps> = ({
 };
 
 export default Settings;
-
