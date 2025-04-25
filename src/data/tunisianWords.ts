@@ -476,67 +476,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "يقول", length: getArabicLength("يقول") },
   { arabic: "يسمع", length: getArabicLength("يسمع") },
   { arabic: "يشوف", length: getArabicLength("يشوف") },
-  { arabic: "يكتب", length: getArabicLength("يكتب") },
-  
-  // More nouns
-  { arabic: "كتاب", length: getArabicLength("كتاب") },
-  { arabic: "قلم", length: getArabicLength("قلم") },
-  { arabic: "ورقة", length: getArabicLength("ورقة") },
-  { arabic: "كراس", length: getArabicLength("كراس") },
-  { arabic: "حقيبة", length: getArabicLength("حقيبة") },
-  { arabic: "مفتاح", length: getArabicLength("مفتاح") },
-  { arabic: "نظارة", length: getArabicLength("نظارة") },
-  { arabic: "ساعة", length: getArabicLength("ساعة") },
-  { arabic: "هاتف", length: getArabicLength("هاتف") },
-  { arabic: "تلفون", length: getArabicLength("تلفون") },
-  
-  // Technology
-  { arabic: "حاسوب", length: getArabicLength("حاسوب") },
-  { arabic: "انترنت", length: getArabicLength("انترنت") },
-  { arabic: "تلفاز", length: getArabicLength("تلفاز") },
-  { arabic: "راديو", length: getArabicLength("راديو") },
-  { arabic: "كاميرا", length: getArabicLength("كاميرا") },
-  { arabic: "شاحن", length: getArabicLength("شاحن") },
-  { arabic: "بطارية", length: getArabicLength("بطارية") },
-  { arabic: "شاشة", length: getArabicLength("شاشة") },
-  { arabic: "فارة", length: getArabicLength("فارة") },
-  { arabic: "لوحة", length: getArabicLength("لوحة") },
-  
-  // Sports
-  { arabic: "كرة", length: getArabicLength("كرة") },
-  { arabic: "قدم", length: getArabicLength("قدم") },
-  { arabic: "سلة", length: getArabicLength("سلة") },
-  { arabic: "سباحة", length: getArabicLength("سباحة") },
-  { arabic: "جري", length: getArabicLength("جري") },
-  { arabic: "مشي", length: getArabicLength("مشي") },
-  { arabic: "تنس", length: getArabicLength("تنس") },
-  { arabic: "ملاكمة", length: getArabicLength("ملاكمة") },
-  { arabic: "مصارعة", length: getArabicLength("مصارعة") },
-  { arabic: "رياضة", length: getArabicLength("رياضة") },
-  
-  // Music and arts
-  { arabic: "غناء", length: getArabicLength("غناء") },
-  { arabic: "رقص", length: getArabicLength("رقص") },
-  { arabic: "رسم", length: getArabicLength("رسم") },
-  { arabic: "نحت", length: getArabicLength("نحت") },
-  { arabic: "مسرح", length: getArabicLength("مسرح") },
-  { arabic: "سينما", length: getArabicLength("سينما") },
-  { arabic: "قصة", length: getArabicLength("قصة") },
-  { arabic: "شعر", length: getArabicLength("شعر") },
-  { arabic: "أدب", length: getArabicLength("أدب") },
-  { arabic: "فن", length: getArabicLength("فن") },
-  
-  // Tunisian specific
-  { arabic: "زبدة", length: getArabicLength("زبدة") },
-  { arabic: "زلابية", length: getArabicLength("زلابية") },
-  { arabic: "مقرونة", length: getArabicLength("مقرونة") },
-  { arabic: "كسكسي", length: getArabicLength("كسكسي") },
-  { arabic: "ملوخية", length: getArabicLength("ملوخية") },
-  { arabic: "مرقة", length: getArabicLength("مرقة") },
-  { arabic: "شربة", length: getArabicLength("شربة") },
-  { arabic: "بريك", length: getArabicLength("بريك") },
-  { arabic: "لبلابي", length: getArabicLength("لبلابي") },
-  { arabic: "سلاطة", length: getArabicLength("سلاطة") }
+  { arabic: "يكتب", length: getArabicLength("يكتب") }
 ];
 
 // Get a random word based on specified length
