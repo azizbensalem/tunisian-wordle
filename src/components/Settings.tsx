@@ -1,9 +1,11 @@
+
 import React from "react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   Select,
@@ -32,6 +34,9 @@ const Settings: React.FC<SettingsProps> = ({
       <DialogContent className="sm:max-w-md" dir="rtl">
         <DialogHeader>
           <DialogTitle>إعدادات اللعبة</DialogTitle>
+          <DialogDescription>
+            اختر طول الكلمات التي تريد التخمين بها
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
@@ -45,11 +50,10 @@ const Settings: React.FC<SettingsProps> = ({
                 <SelectValue placeholder="اختر طول الكلمة" />
               </SelectTrigger>
               <SelectContent>
-                {[3, 4, 5, 6].map((length) => (
-                  <SelectItem key={length} value={length.toString()}>
-                    {length} حروف
-                  </SelectItem>
-                ))}
+                <SelectItem value="3">3 حروف</SelectItem>
+                <SelectItem value="4">4 حروف</SelectItem>
+                <SelectItem value="5">5 حروف</SelectItem>
+                <SelectItem value="6">6 حروف</SelectItem>
               </SelectContent>
             </Select>
           </div>
