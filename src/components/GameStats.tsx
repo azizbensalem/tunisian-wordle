@@ -106,10 +106,15 @@ const GameStats: React.FC<GameStatsProps> = ({
           </div>
 
           <Button
-            onClick={handleNewGame}
+            onClick={() => {
+              onClose();
+              setTimeout(() => {
+                handleNewGame();
+              }, 2000);
+            }}
             className="w-full bg-tunisia-red hover:bg-red-700 text-white"
           >
-            New Game
+            لعبة جديدة
           </Button>
         </div>
       </DialogContent>

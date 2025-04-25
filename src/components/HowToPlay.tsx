@@ -24,12 +24,12 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
 
         <div className="space-y-4">
           <p>
-            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة لازم تكون كلمة
+            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة يلزم تكون كلمة
             صحيحة باللهجة التونسية.
           </p>
 
           <p>
-            بعد كل محاولة، لون المربعات راح يتبدل باش يوريك قداش قريب من الكلمة
+            بعد كل محاولة، لون المربعات باش يتبدل باش يوريك قداش قريب من الكلمة
             الصحيحة.
           </p>
 
@@ -38,14 +38,14 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
               <div className="w-10 h-10 bg-tunisia-correct rounded-md flex items-center justify-center text-white font-bold">
                 ا
               </div>
-              <p>الحرف موجود في الكلمة وفي المكان الصحيح.</p>
+              <p>الحرف موجود في الكلمة و في البلاصة الصحيحة.</p>
             </div>
 
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-tunisia-present rounded-md flex items-center justify-center text-white font-bold">
                 ب
               </div>
-              <p>الحرف موجود في الكلمة لكن في مكان غلط.</p>
+              <p>الحرف موجود في الكلمة أما في البلاصة الغالطة.</p>
             </div>
 
             <div className="flex items-center gap-2">
@@ -57,9 +57,6 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
           </div>
 
           <p>كل مرة تبدا لعبة جديدة، باش تلقى كلمة تونسية جديدة!</p>
-
-          <h3 className="font-bold">على اللهجة التونسية</h3>
-          <p>كل مرة تبدا لعبة جديدة، راح تلقى كلمة تونسية جديدة!</p>
 
           <h3 className="font-bold">على اللهجة التونسية</h3>
           <p>
