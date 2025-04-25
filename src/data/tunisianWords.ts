@@ -21,6 +21,45 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "سمع", length: getArabicLength("سمع") },
   { arabic: "شاف", length: getArabicLength("شاف") },
   { arabic: "كتب", length: getArabicLength("كتب") },
+  { arabic: "قرا", length: getArabicLength("قرا") },
+  { arabic: "خدم", length: getArabicLength("خدم") },
+  { arabic: "لعب", length: getArabicLength("لعب") },
+  { arabic: "خرج", length: getArabicLength("خرج") },
+  { arabic: "دخل", length: getArabicLength("دخل") },
+  { arabic: "لبس", length: getArabicLength("لبس") },
+  { arabic: "غسل", length: getArabicLength("غسل") },
+  { arabic: "عاش", length: getArabicLength("عاش") },
+  { arabic: "سكن", length: getArabicLength("سكن") },
+  { arabic: "ركب", length: getArabicLength("ركب") },
+  { arabic: "حب", length: getArabicLength("حب") },
+  { arabic: "كره", length: getArabicLength("كره") },
+  { arabic: "بكى", length: getArabicLength("بكى") },
+  { arabic: "ضحك", length: getArabicLength("ضحك") },
+  { arabic: "حكى", length: getArabicLength("حكى") },
+  { arabic: "سأل", length: getArabicLength("سأل") },
+  { arabic: "جاوب", length: getArabicLength("جاوب") },
+  { arabic: "فهم", length: getArabicLength("فهم") },
+  { arabic: "نسى", length: getArabicLength("نسى") },
+  { arabic: "تذكر", length: getArabicLength("تذكر") },
+  { arabic: "سمح", length: getArabicLength("سمح") },
+  { arabic: "عطا", length: getArabicLength("عطا") },
+  { arabic: "خذى", length: getArabicLength("خذى") },
+  { arabic: "باع", length: getArabicLength("باع") },
+  { arabic: "شرى", length: getArabicLength("شرى") },
+  { arabic: "طبخ", length: getArabicLength("طبخ") },
+  { arabic: "قطع", length: getArabicLength("قطع") },
+  { arabic: "نظف", length: getArabicLength("نظف") },
+  { arabic: "ساق", length: getArabicLength("ساق") },
+  { arabic: "وقف", length: getArabicLength("وقف") },
+  { arabic: "طاح", length: getArabicLength("طاح") },
+  { arabic: "طلع", length: getArabicLength("طلع") },
+  { arabic: "هبط", length: getArabicLength("هبط") },
+  { arabic: "بدل", length: getArabicLength("بدل") },
+  { arabic: "وصل", length: getArabicLength("وصل") },
+  { arabic: "نجم", length: getArabicLength("نجم") },
+  { arabic: "حبس", length: getArabicLength("حبس") },
+  { arabic: "بدى", length: getArabicLength("بدى") },
+  { arabic: "كمل", length: getArabicLength("كمل") },
 
   // Common nouns
   { arabic: "دار", length: getArabicLength("دار") },
@@ -33,6 +72,43 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "حيط", length: getArabicLength("حيط") },
   { arabic: "سقف", length: getArabicLength("سقف") },
   { arabic: "مطبخ", length: getArabicLength("مطبخ") },
+  { arabic: "حمام", length: getArabicLength("حمام") },
+  { arabic: "قاع", length: getArabicLength("قاع") },
+  { arabic: "صالة", length: getArabicLength("صالة") },
+  { arabic: "بلاصة", length: getArabicLength("بلاصة") },
+  { arabic: "فراش", length: getArabicLength("فراش") },
+  { arabic: "مخدة", length: getArabicLength("مخدة") },
+  { arabic: "بطانية", length: getArabicLength("بطانية") },
+  { arabic: "زربية", length: getArabicLength("زربية") },
+  { arabic: "بابور", length: getArabicLength("بابور") },
+  { arabic: "ماكلة", length: getArabicLength("ماكلة") },
+  { arabic: "ماء", length: getArabicLength("ماء") },
+  { arabic: "كاس", length: getArabicLength("كاس") },
+  { arabic: "صحن", length: getArabicLength("صحن") },
+  { arabic: "مغرفة", length: getArabicLength("مغرفة") },
+  { arabic: "سكين", length: getArabicLength("سكين") },
+  { arabic: "كوجينة", length: getArabicLength("كوجينة") },
+  { arabic: "قهوة", length: getArabicLength("قهوة") },
+  { arabic: "تليفون", length: getArabicLength("تليفون") },
+  { arabic: "تلفزة", length: getArabicLength("تلفزة") },
+  { arabic: "راديو", length: getArabicLength("راديو") },
+  { arabic: "بلاكار", length: getArabicLength("بلاكار") },
+  { arabic: "سبات", length: getArabicLength("سبات") },
+  { arabic: "سروال", length: getArabicLength("سروال") },
+  { arabic: "صباط", length: getArabicLength("صباط") },
+  { arabic: "منقالة", length: getArabicLength("منقالة") },
+  { arabic: "مراية", length: getArabicLength("مراية") },
+  { arabic: "فم", length: getArabicLength("فم") },
+  { arabic: "عين", length: getArabicLength("عين") },
+  { arabic: "راس", length: getArabicLength("راس") },
+  { arabic: "يد", length: getArabicLength("يد") },
+  { arabic: "رجل", length: getArabicLength("رجل") },
+  { arabic: "كتف", length: getArabicLength("كتف") },
+  { arabic: "ظهر", length: getArabicLength("ظهر") },
+  { arabic: "كرش", length: getArabicLength("كرش") },
+  { arabic: "قلب", length: getArabicLength("قلب") },
+  { arabic: "دم", length: getArabicLength("دم") },
+  { arabic: "عظم", length: getArabicLength("عظم") },
 
   // Food and drinks
   { arabic: "خبز", length: getArabicLength("خبز") },
@@ -45,6 +121,44 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "بيض", length: getArabicLength("بيض") },
   { arabic: "فلفل", length: getArabicLength("فلفل") },
   { arabic: "طماطم", length: getArabicLength("طماطم") },
+  { arabic: "بطاطا", length: getArabicLength("بطاطا") },
+  { arabic: "بصل", length: getArabicLength("بصل") },
+  { arabic: "ثوم", length: getArabicLength("ثوم") },
+  { arabic: "كسكسي", length: getArabicLength("كسكسي") },
+  { arabic: "مقرونة", length: getArabicLength("مقرونة") },
+  { arabic: "رز", length: getArabicLength("رز") },
+  { arabic: "عصيدة", length: getArabicLength("عصيدة") },
+  { arabic: "شربة", length: getArabicLength("شربة") },
+  { arabic: "سلطة", length: getArabicLength("سلطة") },
+  { arabic: "كفتاجي", length: getArabicLength("كفتاجي") },
+  { arabic: "كعك", length: getArabicLength("كعك") },
+  { arabic: "حلويات", length: getArabicLength("حلويات") },
+  { arabic: "بريك", length: getArabicLength("بريك") },
+  { arabic: "مقرونة", length: getArabicLength("مقرونة") },
+  { arabic: "قهوة", length: getArabicLength("قهوة") },
+  { arabic: "تاي", length: getArabicLength("تاي") },
+  { arabic: "عصير", length: getArabicLength("عصير") },
+  { arabic: "ليمون", length: getArabicLength("ليمون") },
+  { arabic: "برتقال", length: getArabicLength("برتقال") },
+  { arabic: "تفاح", length: getArabicLength("تفاح") },
+  { arabic: "موز", length: getArabicLength("موز") },
+  { arabic: "دقلة", length: getArabicLength("دقلة") },
+  { arabic: "تين", length: getArabicLength("تين") },
+  { arabic: "عنب", length: getArabicLength("عنب") },
+  { arabic: "دلاع", length: getArabicLength("دلاع") },
+  { arabic: "قرع", length: getArabicLength("قرع") },
+  { arabic: "خيار", length: getArabicLength("خيار") },
+  { arabic: "فقوص", length: getArabicLength("فقوص") },
+  { arabic: "هريسة", length: getArabicLength("هريسة") },
+  { arabic: "زيتون", length: getArabicLength("زيتون") },
+  { arabic: "تمر", length: getArabicLength("تمر") },
+  { arabic: "كعبة", length: getArabicLength("كعبة") },
+  { arabic: "شكلاطة", length: getArabicLength("شكلاطة") },
+  { arabic: "خبز طابونة", length: getArabicLength(" طابونة") },
+  { arabic: "كرواسون", length: getArabicLength("كرواسون") },
+  { arabic: "فريكاسي", length: getArabicLength("فريكاسي") },
+  { arabic: "لبلابي", length: getArabicLength("لبلابي") },
+  { arabic: "كفتة", length: getArabicLength("كفتة") },
 
   // Family members
   { arabic: "بابا", length: getArabicLength("بابا") },
@@ -63,12 +177,47 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "صغير", length: getArabicLength("صغير") },
   { arabic: "طويل", length: getArabicLength("طويل") },
   { arabic: "قصير", length: getArabicLength("قصير") },
-  { arabic: "زين", length: getArabicLength("زين") },
-  { arabic: "خايب", length: getArabicLength("خايب") },
   { arabic: "باهي", length: getArabicLength("باهي") },
+  { arabic: "خايب", length: getArabicLength("خايب") },
   { arabic: "مليح", length: getArabicLength("مليح") },
-  { arabic: "ساخن", length: getArabicLength("ساخن") },
-  { arabic: "بارد", length: getArabicLength("بارد") },
+  { arabic: "سخون", length: getArabicLength("سخون") },
+  { arabic: "بردان", length: getArabicLength("بردان") },
+  { arabic: "سريع", length: getArabicLength("سريع") },
+  { arabic: "بطيء", length: getArabicLength("بطيء") },
+  { arabic: "جميل", length: getArabicLength("جميل") },
+  { arabic: "قبيح", length: getArabicLength("قبيح") },
+  { arabic: "نظيف", length: getArabicLength("نظيف") },
+  { arabic: "مسخ", length: getArabicLength("مسخ") },
+  { arabic: "خفيف", length: getArabicLength("خفيف") },
+  { arabic: "ثقيل", length: getArabicLength("ثقيل") },
+  { arabic: "ساهل", length: getArabicLength("ساهل") },
+  { arabic: "صعيب", length: getArabicLength("صعيب") },
+  { arabic: "مهم", length: getArabicLength("مهم") },
+  { arabic: "بسيط", length: getArabicLength("بسيط") },
+  { arabic: "قوي", length: getArabicLength("قوي") },
+  { arabic: "ضعيف", length: getArabicLength("ضعيف") },
+  { arabic: "عال", length: getArabicLength("عال") },
+  { arabic: "واطي", length: getArabicLength("واطي") },
+  { arabic: "واسع", length: getArabicLength("واسع") },
+  { arabic: "ضيق", length: getArabicLength("ضيق") },
+  { arabic: "مظلم", length: getArabicLength("مظلم") },
+  { arabic: "مضيء", length: getArabicLength("مضيء") },
+  { arabic: "قريب", length: getArabicLength("قريب") },
+  { arabic: "بعيد", length: getArabicLength("بعيد") },
+  { arabic: "ناعم", length: getArabicLength("ناعم") },
+  { arabic: "خشن", length: getArabicLength("خشن") },
+  { arabic: "مبلل", length: getArabicLength("مبلل") },
+  { arabic: "يابس", length: getArabicLength("يابس") },
+  { arabic: "باهظ", length: getArabicLength("باهظ") },
+  { arabic: "رخيص", length: getArabicLength("رخيص") },
+  { arabic: "كامل", length: getArabicLength("كامل") },
+  { arabic: "ناقص", length: getArabicLength("ناقص") },
+  { arabic: "صحيح", length: getArabicLength("صحيح") },
+  { arabic: "غلط", length: getArabicLength("غلط") },
+  { arabic: "شجاع", length: getArabicLength("شجاع") },
+  { arabic: "جبان", length: getArabicLength("جبان") },
+  { arabic: "مريض", length: getArabicLength("مريض") },
+  { arabic: "مشرق", length: getArabicLength("مشرق") },
 
   // Time expressions
   { arabic: "توا", length: getArabicLength("توا") },
@@ -81,18 +230,44 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "نهار", length: getArabicLength("نهار") },
   { arabic: "سنة", length: getArabicLength("سنة") },
   { arabic: "شهر", length: getArabicLength("شهر") },
+  { arabic: "جمعة", length: getArabicLength("جمعة") },
+  { arabic: "أسبوع", length: getArabicLength("أسبوع") },
+  { arabic: "دقيقة", length: getArabicLength("دقيقة") },
+  { arabic: "ساعة", length: getArabicLength("ساعة") },
+  { arabic: "يوم", length: getArabicLength("يوم") },
+  { arabic: "أمس", length: getArabicLength("أمس") },
+  { arabic: "الليلة", length: getArabicLength("الليلة") },
+  { arabic: "غدوة الصباح", length: getArabicLength("غدوة الصباح") },
+  { arabic: "بعد غدوة", length: getArabicLength("بعد غدوة") },
+  { arabic: "نهارين", length: getArabicLength("نهارين") },
+  { arabic: "تالي", length: getArabicLength("تالي") },
+  { arabic: "تواك", length: getArabicLength("تواك") }, 
+  { arabic: "عشوية", length: getArabicLength("عشوية") },
+  { arabic: "مساء", length: getArabicLength("مساء") },
+  { arabic: "فجر", length: getArabicLength("فجر") },
 
   // Clothes and accessories
   { arabic: "سروال", length: getArabicLength("سروال") },
-  { arabic: "قميجة", length: getArabicLength("قميجة") },
   { arabic: "صباط", length: getArabicLength("صباط") },
   { arabic: "جبة", length: getArabicLength("جبة") },
   { arabic: "فيست", length: getArabicLength("فيست") },
   { arabic: "كسوة", length: getArabicLength("كسوة") },
   { arabic: "منديل", length: getArabicLength("منديل") },
   { arabic: "شاش", length: getArabicLength("شاش") },
-  { arabic: "جاكيتة", length: getArabicLength("جاكيتة") },
+  { arabic: "جاكيت", length: getArabicLength("جاكيت") },
   { arabic: "برنس", length: getArabicLength("برنس") },
+  { arabic: "شورت", length: getArabicLength("شورت") },
+  { arabic: "كلسون", length: getArabicLength("كلسون") },
+  { arabic: "كرافات", length: getArabicLength("كرافات") },
+  { arabic: "طربوش", length: getArabicLength("طربوش") },
+  { arabic: "حزام", length: getArabicLength("حزام") },
+  { arabic: "روبة", length: getArabicLength("روبة") },
+  { arabic: "جلابة", length: getArabicLength("جلابة") },
+  { arabic: "شال", length: getArabicLength("شال") },
+  { arabic: "بوط", length: getArabicLength("بوط") },
+  { arabic: "سبادري", length: getArabicLength("سبادري") },
+  { arabic: "كشيدة", length: getArabicLength("كشيدة") },
+  { arabic: "فولارة", length: getArabicLength("فولارة") },
 
   // Transportation
   { arabic: "كرهبة", length: getArabicLength("كرهبة") },
@@ -105,7 +280,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "تران", length: getArabicLength("تران") },
   { arabic: "موتو", length: getArabicLength("موتو") },
   { arabic: "فلوكة", length: getArabicLength("فلوكة") },
-  
+
   // Colors
   { arabic: "أحمر", length: getArabicLength("أحمر") },
   { arabic: "أزرق", length: getArabicLength("أزرق") },
@@ -117,7 +292,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "رمادي", length: getArabicLength("رمادي") },
   { arabic: "وردي", length: getArabicLength("وردي") },
   { arabic: "برتقالي", length: getArabicLength("برتقالي") },
-  
+
   // Numbers
   { arabic: "واحد", length: getArabicLength("واحد") },
   { arabic: "زوز", length: getArabicLength("زوز") },
@@ -129,7 +304,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "ثمنية", length: getArabicLength("ثمنية") },
   { arabic: "تسعة", length: getArabicLength("تسعة") },
   { arabic: "عشرة", length: getArabicLength("عشرة") },
-  
+
   // Weather
   { arabic: "شمس", length: getArabicLength("شمس") },
   { arabic: "مطر", length: getArabicLength("مطر") },
@@ -140,8 +315,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "برق", length: getArabicLength("برق") },
   { arabic: "رعد", length: getArabicLength("رعد") },
   { arabic: "عاصفة", length: getArabicLength("عاصفة") },
-  { arabic: "قوس قزح", length: getArabicLength("قوس قزح") },
-  
+
   // Body parts
   { arabic: "راس", length: getArabicLength("راس") },
   { arabic: "وجه", length: getArabicLength("وجه") },
@@ -153,7 +327,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "رجل", length: getArabicLength("رجل") },
   { arabic: "ظهر", length: getArabicLength("ظهر") },
   { arabic: "بطن", length: getArabicLength("بطن") },
-  
+
   // Fruits
   { arabic: "تفاح", length: getArabicLength("تفاح") },
   { arabic: "برتقال", length: getArabicLength("برتقال") },
@@ -165,7 +339,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "دلاع", length: getArabicLength("دلاع") },
   { arabic: "كرموس", length: getArabicLength("كرموس") },
   { arabic: "رمان", length: getArabicLength("رمان") },
-  
+
   // Vegetables
   { arabic: "بطاطا", length: getArabicLength("بطاطا") },
   { arabic: "جزر", length: getArabicLength("جزر") },
@@ -177,7 +351,22 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "باذنجان", length: getArabicLength("باذنجان") },
   { arabic: "كوسة", length: getArabicLength("كوسة") },
   { arabic: "لفت", length: getArabicLength("لفت") },
+  { arabic: "طماطم", length: getArabicLength("طماطم") }, 
+  { arabic: "سلطة", length: getArabicLength("سلطة") },   
+  { arabic: "سبناخ", length: getArabicLength("سبناخ") },
+  { arabic: "نعناع", length: getArabicLength("نعناع") }, 
+  { arabic: "معدنوس", length: getArabicLength("معدنوس") },
+  { arabic: "كرافس", length: getArabicLength("كرافس") },
+  { arabic: "قرع", length: getArabicLength("قرع") },   
+  { arabic: "جرجير", length: getArabicLength("جرجير") },
+  { arabic: "بسباس", length: getArabicLength("بسباس") }, 
+  { arabic: "لوبيا", length: getArabicLength("لوبيا") },
+  { arabic: "فول", length: getArabicLength("فول") },    
+  { arabic: "عدس", length: getArabicLength("عدس") },     
+  { arabic: "كرمب", length: getArabicLength("كرمب") },  
+  { arabic: "ملوخية", length: getArabicLength("ملوخية") },
   
+
   // Animals
   { arabic: "كلب", length: getArabicLength("كلب") },
   { arabic: "قط", length: getArabicLength("قط") },
@@ -189,7 +378,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "عصفور", length: getArabicLength("عصفور") },
   { arabic: "سمكة", length: getArabicLength("سمكة") },
   { arabic: "أرنب", length: getArabicLength("أرنب") },
-  
+
   // Professions
   { arabic: "طبيب", length: getArabicLength("طبيب") },
   { arabic: "معلم", length: getArabicLength("معلم") },
@@ -201,7 +390,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "خباز", length: getArabicLength("خباز") },
   { arabic: "سائق", length: getArabicLength("سائق") },
   { arabic: "شرطي", length: getArabicLength("شرطي") },
-  
+
   // Places
   { arabic: "سوق", length: getArabicLength("سوق") },
   { arabic: "مدرسة", length: getArabicLength("مدرسة") },
@@ -213,7 +402,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "جامع", length: getArabicLength("جامع") },
   { arabic: "سينما", length: getArabicLength("سينما") },
   { arabic: "ملعب", length: getArabicLength("ملعب") },
-  
+
   // Tunisian expressions
   { arabic: "شنية", length: getArabicLength("شنية") },
   { arabic: "شوف", length: getArabicLength("شوف") },
@@ -225,7 +414,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "اسمع", length: getArabicLength("اسمع") },
   { arabic: "معنى", length: getArabicLength("معنى") },
   { arabic: "فكرة", length: getArabicLength("فكرة") },
-  
+
   // More expressions
   { arabic: "باللهي", length: getArabicLength("باللهي") },
   { arabic: "بالك", length: getArabicLength("بالك") },
@@ -237,7 +426,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "توة", length: getArabicLength("توة") },
   { arabic: "ماشي", length: getArabicLength("ماشي") },
   { arabic: "احكي", length: getArabicLength("احكي") },
-  
+
   // Greetings and social expressions
   { arabic: "لاباس", length: getArabicLength("لاباس") },
   { arabic: "سهرة", length: getArabicLength("سهرة") },
@@ -249,7 +438,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "معلم", length: getArabicLength("معلم") },
   { arabic: "بالسلامة", length: getArabicLength("بالسلامة") },
   { arabic: "نستناك", length: getArabicLength("نستناك") },
-  
+
   // Question words
   { arabic: "باش", length: getArabicLength("باش") },
   { arabic: "كان", length: getArabicLength("كان") },
@@ -261,7 +450,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "برا", length: getArabicLength("برا") },
   { arabic: "جوا", length: getArabicLength("جوا") },
   { arabic: "هاك", length: getArabicLength("هاك") },
-  
+
   // More common words
   { arabic: "جيت", length: getArabicLength("جيت") },
   { arabic: "قوم", length: getArabicLength("قوم") },
@@ -273,7 +462,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "علاش", length: getArabicLength("علاش") },
   { arabic: "وقتاش", length: getArabicLength("وقتاش") },
   { arabic: "كيفاش", length: getArabicLength("كيفاش") },
-  
+
   // Places and locations
   { arabic: "بلاصة", length: getArabicLength("بلاصة") },
   { arabic: "حاجة", length: getArabicLength("حاجة") },
@@ -285,7 +474,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "طويل", length: getArabicLength("طويل") },
   { arabic: "قصير", length: getArabicLength("قصير") },
   { arabic: "سوق", length: getArabicLength("سوق") },
-  
+
   // Commerce terms
   { arabic: "شراء", length: getArabicLength("شراء") },
   { arabic: "بياع", length: getArabicLength("بياع") },
@@ -297,7 +486,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "نشوف", length: getArabicLength("نشوف") },
   { arabic: "تمشي", length: getArabicLength("تمشي") },
   { arabic: "نمشي", length: getArabicLength("نمشي") },
-  
+
   // Verbs in first person
   { arabic: "نحكي", length: getArabicLength("نحكي") },
   { arabic: "تحكي", length: getArabicLength("تحكي") },
@@ -309,7 +498,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "تسمع", length: getArabicLength("تسمع") },
   { arabic: "ثقيل", length: getArabicLength("ثقيل") },
   { arabic: "خفيف", length: getArabicLength("خفيف") },
-  
+
   // Health and condition
   { arabic: "مريض", length: getArabicLength("مريض") },
   { arabic: "ماكلة", length: getArabicLength("ماكلة") },
@@ -321,7 +510,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "عائلة", length: getArabicLength("عائلة") },
   { arabic: "مدرسة", length: getArabicLength("مدرسة") },
   { arabic: "جامعة", length: getArabicLength("جامعة") },
-  
+
   // More places
   { arabic: "مكتبة", length: getArabicLength("مكتبة") },
   { arabic: "ليل", length: getArabicLength("ليل") },
@@ -333,7 +522,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "حب", length: getArabicLength("حب") },
   { arabic: "مطار", length: getArabicLength("مطار") },
   { arabic: "محطة", length: getArabicLength("محطة") },
-  
+
   // Roads and transportation
   { arabic: "طريق", length: getArabicLength("طريق") },
   { arabic: "شارع", length: getArabicLength("شارع") },
@@ -345,7 +534,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "حلوة", length: getArabicLength("حلوة") },
   { arabic: "مالح", length: getArabicLength("مالح") },
   { arabic: "حامض", length: getArabicLength("حامض") },
-  
+
   // Countries
   { arabic: "تونس", length: getArabicLength("تونس") },
   { arabic: "جزائر", length: getArabicLength("جزائر") },
@@ -357,7 +546,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "بالله", length: getArabicLength("بالله") },
   { arabic: "خاطر", length: getArabicLength("خاطر") },
   { arabic: "طبيعة", length: getArabicLength("طبيعة") },
-  
+
   // Emotions and feelings
   { arabic: "سعادة", length: getArabicLength("سعادة") },
   { arabic: "رجولية", length: getArabicLength("رجولية") },
@@ -369,7 +558,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "حر", length: getArabicLength("حر") },
   { arabic: "ثلج", length: getArabicLength("ثلج") },
   { arabic: "مطر", length: getArabicLength("مطر") },
-  
+
   // Nature elements
   { arabic: "ريح", length: getArabicLength("ريح") },
   { arabic: "بحر", length: getArabicLength("بحر") },
@@ -381,7 +570,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "هواء", length: getArabicLength("هواء") },
   { arabic: "غابة", length: getArabicLength("غابة") },
   { arabic: "جبل", length: getArabicLength("جبل") },
-  
+
   // Geography
   { arabic: "واد", length: getArabicLength("واد") },
   { arabic: "بلاد", length: getArabicLength("بلاد") },
@@ -393,7 +582,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "حيط", length: getArabicLength("حيط") },
   { arabic: "فراش", length: getArabicLength("فراش") },
   { arabic: "مخدة", length: getArabicLength("مخدة") },
-  
+
   // Home items
   { arabic: "لحاف", length: getArabicLength("لحاف") },
   { arabic: "صالة", length: getArabicLength("صالة") },
@@ -405,7 +594,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "عنب", length: getArabicLength("عنب") },
   { arabic: "خوخ", length: getArabicLength("خوخ") },
   { arabic: "كرز", length: getArabicLength("كرز") },
-  
+
   // Food items
   { arabic: "حمص", length: getArabicLength("حمص") },
   { arabic: "فول", length: getArabicLength("فول") },
@@ -417,7 +606,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "خضرة", length: getArabicLength("خضرة") },
   { arabic: "غلة", length: getArabicLength("غلة") },
   { arabic: "سبت", length: getArabicLength("سبت") },
-  
+
   // Days of the week
   { arabic: "احد", length: getArabicLength("احد") },
   { arabic: "اثنين", length: getArabicLength("اثنين") },
@@ -429,7 +618,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "عامين", length: getArabicLength("عامين") },
   { arabic: "يومين", length: getArabicLength("يومين") },
   { arabic: "ساعة", length: getArabicLength("ساعة") },
-  
+
   // Time units
   { arabic: "دقيقة", length: getArabicLength("دقيقة") },
   { arabic: "ثانية", length: getArabicLength("ثانية") },
@@ -441,7 +630,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "هذاكة", length: getArabicLength("هذاكة") },
   { arabic: "هكا", length: getArabicLength("هكا") },
   { arabic: "بيها", length: getArabicLength("بيها") },
-  
+
   // Prepositions
   { arabic: "فيها", length: getArabicLength("فيها") },
   { arabic: "عليها", length: getArabicLength("عليها") },
@@ -453,11 +642,10 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "قريب", length: getArabicLength("قريب") },
   { arabic: "بعيد", length: getArabicLength("بعيد") },
   { arabic: "وسط", length: getArabicLength("وسط") },
-  
+
   // More common expressions
   { arabic: "برشا", length: getArabicLength("برشا") },
   { arabic: "شوية", length: getArabicLength("شوية") },
-  { arabic: "بالزاف", length: getArabicLength("بالزاف") },
   { arabic: "قداش", length: getArabicLength("قداش") },
   { arabic: "عاد", length: getArabicLength("عاد") },
   { arabic: "توا", length: getArabicLength("توا") },
@@ -465,7 +653,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "قبل", length: getArabicLength("قبل") },
   { arabic: "زعمة", length: getArabicLength("زعمة") },
   { arabic: "يعني", length: getArabicLength("يعني") },
-  
+
   // More verbs
   { arabic: "يجي", length: getArabicLength("يجي") },
   { arabic: "يمشي", length: getArabicLength("يمشي") },
@@ -476,7 +664,7 @@ export const tunisianWords: TunisianWord[] = [
   { arabic: "يقول", length: getArabicLength("يقول") },
   { arabic: "يسمع", length: getArabicLength("يسمع") },
   { arabic: "يشوف", length: getArabicLength("يشوف") },
-  { arabic: "يكتب", length: getArabicLength("يكتب") }
+  { arabic: "يكتب", length: getArabicLength("يكتب") },
 ];
 
 // Get a random word based on specified length
