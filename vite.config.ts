@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   //   Boolean
   // ),
   plugins: [react()],
-  base: "/tunisian-wordle",
+  base: "/tunisian-wordle/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
