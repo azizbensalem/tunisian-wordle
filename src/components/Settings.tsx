@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -46,13 +47,11 @@ const Settings: React.FC<SettingsProps> = ({
               onValueChange={(value) => {
                 const length = parseInt(value);
                 onWordLengthChange(length);
-                onClose();
+                onClose(); // Close the dialog after changing the word length
               }}
             >
               <SelectTrigger>
-                <SelectValue placeholder="اختر طول الكلمة">
-                  {wordLength}
-                </SelectValue>
+                <SelectValue placeholder="اختر طول الكلمة">{wordLength}</SelectValue>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="3">3 حروف</SelectItem>

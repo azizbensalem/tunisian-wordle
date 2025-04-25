@@ -41,12 +41,6 @@ const GameStats: React.FC<GameStatsProps> = ({
 
   const maxInDistribution = Math.max(...stats.guessDistribution, 1);
 
-  // Create a function to handle starting a new game and close the dialog
-  const handleStartNewGame = () => {
-    onClose();
-    handleNewGame();
-  };
-
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-md" dir="rtl">
@@ -56,15 +50,9 @@ const GameStats: React.FC<GameStatsProps> = ({
 
         <div className="space-y-4">
           {hasWon ? (
-            <p>
-              لقيت الكلمة في {guessCount}{" "}
-              {guessCount === 1 ? "محاولة" : "محاولات"}!
-            </p>
+            <p>You guessed the word in {guessCount} {guessCount === 1 ? 'try' : 'tries'}!</p>
           ) : (
-            <p>
-              الكلمة كانت:{" "}
-              <strong className="text-tunisia-red">{targetWord}</strong>
-            </p>
+            <p>The word was: <strong className="text-tunisia-red">{targetWord}</strong></p>
           )}
 
           <div className="grid grid-cols-4 gap-4 text-center">
@@ -111,11 +99,10 @@ const GameStats: React.FC<GameStatsProps> = ({
             </div>
           </div>
 
-          <Button
-            onClick={handleStartNewGame}
-            className="w-full bg-tunisia-red hover:bg-red-700 text-white"
-          >
-            لعبة جديدة
+          <Button 
+            onClick={handleNewGame} 
+            className="w-full bg-tunisia-red hover:bg-red-700 text-white">
+            New Game
           </Button>
         </div>
       </DialogContent>

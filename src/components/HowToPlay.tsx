@@ -14,23 +14,18 @@ interface HowToPlayProps {
 const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent
-        className="sm:max-w-md max-h-[90vh] overflow-auto"
-        dir="rtl"
-      >
+      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-auto" dir="rtl">
         <DialogHeader>
           <DialogTitle>كيفاش تلعب وَردل تونسي</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           <p>
-            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة يلزم تكون كلمة
-            صحيحة باللهجة التونسية.
+            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة لازم تكون كلمة صحيحة باللهجة التونسية.
           </p>
 
           <p>
-            بعد كل محاولة، لون المربعات باش يتبدل باش يوريك قداش قريب من الكلمة
-            الصحيحة.
+            بعد كل محاولة، لون المربعات راح يتبدل باش يوريك قداش قريب من الكلمة الصحيحة.
           </p>
 
           <div className="space-y-2">
@@ -38,14 +33,14 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
               <div className="w-10 h-10 bg-tunisia-correct rounded-md flex items-center justify-center text-white font-bold">
                 ا
               </div>
-              <p>الحرف موجود في الكلمة و في البلاصة الصحيحة.</p>
+              <p>الحرف موجود في الكلمة وفي المكان الصحيح.</p>
             </div>
 
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-tunisia-present rounded-md flex items-center justify-center text-white font-bold">
                 ب
               </div>
-              <p>الحرف موجود في الكلمة أما في البلاصة الغالطة.</p>
+              <p>الحرف موجود في الكلمة لكن في مكان غلط.</p>
             </div>
 
             <div className="flex items-center gap-2">
@@ -60,8 +55,12 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
 
           <h3 className="font-bold">على اللهجة التونسية</h3>
           <p>
-            اللهجة التونسية هي اللغة المحكية في تونس. هي مزيج من العربية مع
-            تأثيرات من الأمازيغية والفرنسية والإيطالية والتركية ولغات أخرى.
+            كل مرة تبدا لعبة جديدة، راح تلقى كلمة تونسية جديدة!
+          </p>
+          
+          <h3 className="font-bold">على اللهجة التونسية</h3>
+          <p>
+            اللهجة التونسية هي اللغة المحكية في تونس. هي مزيج من العربية مع تأثيرات من الأمازيغية والفرنسية والإيطالية والتركية ولغات أخرى.
           </p>
         </div>
       </DialogContent>
