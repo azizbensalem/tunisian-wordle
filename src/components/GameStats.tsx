@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -34,6 +35,12 @@ const GameStats: React.FC<GameStatsProps> = ({
     : 0;
   
   const maxInDistribution = Math.max(...stats.guessDistribution, 1);
+
+  // Create a function to handle starting a new game and close the dialog
+  const handleStartNewGame = () => {
+    handleNewGame();
+    onClose();
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -94,7 +101,7 @@ const GameStats: React.FC<GameStatsProps> = ({
           </div>
 
           <Button 
-            onClick={handleNewGame} 
+            onClick={handleStartNewGame} 
             className="w-full bg-tunisia-red hover:bg-red-700 text-white">
             لعبة جديدة
           </Button>
