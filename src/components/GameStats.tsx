@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -38,39 +37,39 @@ const GameStats: React.FC<GameStatsProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" dir="rtl">
         <DialogHeader>
-          <DialogTitle>{hasWon ? "Congratulations!" : "Game Over"}</DialogTitle>
+          <DialogTitle>{hasWon ? "مبروك!" : "انتهت اللعبة"}</DialogTitle>
         </DialogHeader>
         
         <div className="space-y-4">
           {hasWon ? (
-            <p>You guessed the word in {guessCount} {guessCount === 1 ? 'try' : 'tries'}!</p>
+            <p>لقيت الكلمة في {guessCount} {guessCount === 1 ? 'محاولة' : 'محاولات'}!</p>
           ) : (
-            <p>The word was: <strong className="text-tunisia-red">{targetWord}</strong></p>
+            <p>الكلمة كانت: <strong className="text-tunisia-red">{targetWord}</strong></p>
           )}
 
           <div className="grid grid-cols-4 gap-4 text-center">
             <div className="flex flex-col">
               <span className="text-2xl font-bold">{stats.gamesPlayed}</span>
-              <span className="text-xs">Played</span>
+              <span className="text-xs">لعبت</span>
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold">{winPercentage}</span>
-              <span className="text-xs">Win %</span>
+              <span className="text-xs">نسبة الفوز ٪</span>
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold">{stats.currentStreak}</span>
-              <span className="text-xs">Current Streak</span>
+              <span className="text-xs">سلسلة حالية</span>
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold">{stats.maxStreak}</span>
-              <span className="text-xs">Max Streak</span>
+              <span className="text-xs">أطول سلسلة</span>
             </div>
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-medium">GUESS DISTRIBUTION</h3>
+            <h3 className="font-medium">توزيع المحاولات</h3>
             <div className="space-y-1">
               {stats.guessDistribution.map((count, i) => (
                 <div key={i} className="flex items-center gap-1">
@@ -97,7 +96,7 @@ const GameStats: React.FC<GameStatsProps> = ({
           <Button 
             onClick={handleNewGame} 
             className="w-full bg-tunisia-red hover:bg-red-700 text-white">
-            New Game
+            لعبة جديدة
           </Button>
         </div>
       </DialogContent>

@@ -29,25 +29,25 @@ const Settings: React.FC<SettingsProps> = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" dir="rtl">
         <DialogHeader>
-          <DialogTitle>Game Settings</DialogTitle>
+          <DialogTitle>إعدادات اللعبة</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label>Word Length</Label>
+            <Label>طول الكلمة</Label>
             <Select
               value={wordLength.toString()}
               onValueChange={(value) => onWordLengthChange(parseInt(value))}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select word length" />
+                <SelectValue placeholder="اختر طول الكلمة" />
               </SelectTrigger>
               <SelectContent>
-                {[5, 6, 7].map((length) => (
+                {[3, 4, 5, 6].map((length) => (
                   <SelectItem key={length} value={length.toString()}>
-                    {length} letters
+                    {length} حروف
                   </SelectItem>
                 ))}
               </SelectContent>
