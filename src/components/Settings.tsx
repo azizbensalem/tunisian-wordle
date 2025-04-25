@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Dialog,
@@ -51,7 +50,9 @@ const Settings: React.FC<SettingsProps> = ({
               }}
             >
               <SelectTrigger>
-                <SelectValue placeholder="اختر طول الكلمة">{wordLength}</SelectValue>
+                <SelectValue placeholder="اختر طول الكلمة">
+                  {wordLength}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="3">3 حروف</SelectItem>
