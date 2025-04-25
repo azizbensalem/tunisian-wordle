@@ -1,6 +1,6 @@
 {
-  "homepage": "https://azizbensalem.github.io/tunisian-wordle",
   "name": "tunisian-wordle",
+  "homepage": "https://azizbensalem.github.io/tunisian-wordle",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,7 +8,9 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
