@@ -14,18 +14,23 @@ interface HowToPlayProps {
 const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-auto" dir="rtl">
+      <DialogContent
+        className="sm:max-w-md max-h-[90vh] overflow-auto"
+        dir="rtl"
+      >
         <DialogHeader>
           <DialogTitle>كيفاش تلعب وَردل تونسي</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           <p>
-            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة لازم تكون كلمة صحيحة باللهجة التونسية.
+            حاول تلقى الكلمة التونسية في 6 محاولات. كل محاولة لازم تكون كلمة
+            صحيحة باللهجة التونسية.
           </p>
 
           <p>
-            بعد كل محاولة، لون المربعات راح يتبدل باش يوريك قداش قريب من الكلمة الصحيحة.
+            بعد كل محاولة، لون المربعات راح يتبدل باش يوريك قداش قريب من الكلمة
+            الصحيحة.
           </p>
 
           <div className="space-y-2">
@@ -54,13 +59,12 @@ const HowToPlay: React.FC<HowToPlayProps> = ({ isOpen, onClose }) => {
           <p>كل مرة تبدا لعبة جديدة، باش تلقى كلمة تونسية جديدة!</p>
 
           <h3 className="font-bold">على اللهجة التونسية</h3>
-          <p>
-            كل مرة تبدا لعبة جديدة، راح تلقى كلمة تونسية جديدة!
-          </p>
-          
+          <p>كل مرة تبدا لعبة جديدة، راح تلقى كلمة تونسية جديدة!</p>
+
           <h3 className="font-bold">على اللهجة التونسية</h3>
           <p>
-            اللهجة التونسية هي اللغة المحكية في تونس. هي مزيج من العربية مع تأثيرات من الأمازيغية والفرنسية والإيطالية والتركية ولغات أخرى.
+            اللهجة التونسية هي اللغة المحكية في تونس. هي مزيج من العربية مع
+            تأثيرات من الأمازيغية والفرنسية والإيطالية والتركية ولغات أخرى.
           </p>
         </div>
       </DialogContent>

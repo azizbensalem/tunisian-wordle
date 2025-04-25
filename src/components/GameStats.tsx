@@ -50,9 +50,15 @@ const GameStats: React.FC<GameStatsProps> = ({
 
         <div className="space-y-4">
           {hasWon ? (
-            <p>You guessed the word in {guessCount} {guessCount === 1 ? 'try' : 'tries'}!</p>
+            <p>
+              You guessed the word in {guessCount}{" "}
+              {guessCount === 1 ? "try" : "tries"}!
+            </p>
           ) : (
-            <p>The word was: <strong className="text-tunisia-red">{targetWord}</strong></p>
+            <p>
+              The word was:{" "}
+              <strong className="text-tunisia-red">{targetWord}</strong>
+            </p>
           )}
 
           <div className="grid grid-cols-4 gap-4 text-center">
@@ -99,9 +105,10 @@ const GameStats: React.FC<GameStatsProps> = ({
             </div>
           </div>
 
-          <Button 
-            onClick={handleNewGame} 
-            className="w-full bg-tunisia-red hover:bg-red-700 text-white">
+          <Button
+            onClick={handleNewGame}
+            className="w-full bg-tunisia-red hover:bg-red-700 text-white"
+          >
             New Game
           </Button>
         </div>
