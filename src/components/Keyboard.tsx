@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -63,19 +62,26 @@ const Keyboard: React.FC<KeyboardProps> = ({
         >
           {row.map((key) => {
             const state = getKeyState(key);
-            
+
             let buttonStyle = "bg-tunisia-keyboard text-gray-800";
-            if (state === "correct") buttonStyle = "bg-tunisia-correct text-white";
-            if (state === "present") buttonStyle = "bg-tunisia-present text-white";
-            if (state === "absent") buttonStyle = "bg-tunisia-absent text-white";
-            
+            if (state === "correct")
+              buttonStyle = "bg-tunisia-correct text-white";
+            if (state === "present")
+              buttonStyle = "bg-tunisia-present text-white";
+            if (state === "absent")
+              buttonStyle = "bg-tunisia-absent text-white";
+
             return (
               <button
                 key={key}
                 onClick={() => onKeyPress(key)}
                 className={cn(
                   "rounded h-14 font-bold text-sm sm:text-base flex items-center justify-center transition-colors",
-                  key === "Enter" ? "px-2 flex-grow" : key === "Backspace" ? "px-3 flex-grow" : "w-8 sm:w-10",
+                  key === "Enter"
+                    ? "px-2 flex-grow"
+                    : key === "Backspace"
+                    ? "px-3 flex-grow"
+                    : "w-8 sm:w-10",
                   buttonStyle
                 )}
               >
@@ -90,4 +96,3 @@ const Keyboard: React.FC<KeyboardProps> = ({
 };
 
 export default Keyboard;
-

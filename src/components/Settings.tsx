@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   Select,
@@ -29,27 +30,35 @@ const Settings: React.FC<SettingsProps> = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md" dir="rtl">
         <DialogHeader>
-          <DialogTitle>Game Settings</DialogTitle>
+          <DialogTitle>إعدادات اللعبة</DialogTitle>
+          <DialogDescription>
+            اختر طول الكلمات التي تريد التخمين بها
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label>Word Length</Label>
+            <Label>طول الكلمة</Label>
             <Select
-              value={wordLength.toString()}
-              onValueChange={(value) => onWordLengthChange(parseInt(value))}
+              defaultValue={wordLength.toString()}
+              onValueChange={(value) => {
+                const length = parseInt(value);
+                onWordLengthChange(length);
+                onClose();
+              }}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select word length" />
+                <SelectValue placeholder="اختر طول الكلمة">
+                  {wordLength}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                {[5, 6, 7].map((length) => (
-                  <SelectItem key={length} value={length.toString()}>
-                    {length} letters
-                  </SelectItem>
-                ))}
+                <SelectItem value="3">3 حروف</SelectItem>
+                <SelectItem value="4">4 حروف</SelectItem>
+                <SelectItem value="5">5 حروف</SelectItem>
+                <SelectItem value="6">6 حروف</SelectItem>
               </SelectContent>
             </Select>
           </div>

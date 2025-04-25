@@ -52,8 +52,8 @@ const Index = () => {
   }, [stats]);
 
   // Initialize game with new word length
-  const startNewGame = () => {
-    const newTarget = getRandomWord(wordLength);
+  const startNewGame = (length = wordLength) => {
+    const newTarget = getRandomWord(length);
     setTargetWord({
       arabic: newTarget.arabic,
     });
@@ -61,13 +61,12 @@ const Index = () => {
     setCurrentGuess("");
     setGameOver(false);
     setHasWon(false);
-    console.log("New game started. Word to guess:", newTarget.arabic);
   };
 
   // Handle word length change
   const handleWordLengthChange = (length: number) => {
     setWordLength(length);
-    startNewGame();
+    startNewGame(length);
   };
 
   // Handle game completion
@@ -84,16 +83,16 @@ const Index = () => {
       newStats.maxStreak = Math.max(newStats.maxStreak, newStats.currentStreak);
       newStats.guessDistribution[guesses.length] += 1;
 
-      toast.success("Great job! 🎉", {
-        description: `You found the word in ${guesses.length + 1} ${
-          guesses.length === 0 ? "try" : "tries"
+      toast.success("برافو عليك! 🎉", {
+        description: `لقيت الكلمة في ${guesses.length + 1} ${
+          guesses.length === 0 ? "محاولة" : "محاولات"
         }!`,
       });
     } else {
       newStats.currentStreak = 0;
 
-      toast.error("Game over!", {
-        description: `The word was ${targetWord.arabic}.`,
+      toast.error("خسرت!", {
+        description: `الكلمة كانت ${targetWord.arabic}`,
       });
     }
 
@@ -160,7 +159,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white" dir="rtl">
       <header className="bg-tunisia-red text-white py-4 shadow-md">
         <div className="container max-w-lg mx-auto px-4 flex justify-between items-center">
           <Button
@@ -168,13 +167,10 @@ const Index = () => {
             onClick={() => setShowHowToPlay(true)}
             className="text-white hover:bg-red-700"
           >
-            ?
+            ؟
           </Button>
           <h1 className="text-2xl font-bold tracking-wide text-center">
-            <div>TUNISIAN WORDLE</div>
-            {/* <div className="text-lg font-normal mt-1 text-center" dir="rtl">
-              {targetWord.arabic}
-            </div> */}
+            <div>وَردل تونسي</div>
           </h1>
           <div className="flex gap-2">
             <Button

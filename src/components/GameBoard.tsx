@@ -1,4 +1,3 @@
-
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +31,7 @@ const Cell: React.FC<CellProps> = ({ value, state, position }) => {
         "w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center text-2xl font-bold rounded-md animate-pop",
         stateStyles[state]
       )}
-      style={{ 
+      style={{
         animationDelay: `${position * 100}ms`,
       }}
     >
@@ -98,7 +97,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
   if (guesses.length < 6) {
     const currentGuessArray = currentGuess.split("");
     const currentRow = [];
-    
+
     for (let i = 0; i < targetWord.length; i++) {
       currentRow.push(
         <Cell
@@ -109,7 +108,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
         />
       );
     }
-    
+
     rows.push(
       <div key="current-guess" className="flex gap-1 mb-2" dir="rtl">
         {currentRow}
@@ -123,7 +122,12 @@ const GameBoard: React.FC<GameBoardProps> = ({
           {Array(targetWord.length)
             .fill(0)
             .map((_, j) => (
-              <Cell key={`empty-${i}-${j}`} value="" state="empty" position={j} />
+              <Cell
+                key={`empty-${i}-${j}`}
+                value=""
+                state="empty"
+                position={j}
+              />
             ))}
         </div>
       );
@@ -134,4 +138,3 @@ const GameBoard: React.FC<GameBoardProps> = ({
 };
 
 export default GameBoard;
-
