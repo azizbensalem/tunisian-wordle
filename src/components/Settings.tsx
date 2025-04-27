@@ -1,66 +1,73 @@
-import React from "react";
+
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface SettingsProps {
   isOpen: boolean;
   onClose: () => void;
+  hardMode: boolean;
+  onHardModeChange: (enabled: boolean) => void;
   wordLength: number;
   onWordLengthChange: (length: number) => void;
 }
 
-const Settings: React.FC<SettingsProps> = ({
+const Settings = ({
   isOpen,
   onClose,
+  hardMode,
+  onHardModeChange,
   wordLength,
   onWordLengthChange,
-}) => {
+}: SettingsProps) => {
+  const [localWordLength, setLocalWordLength] = useState(wordLength);
+
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-md" dir="rtl">
         <DialogHeader>
-          <DialogTitle>إعدادات اللعبة</DialogTitle>
-          <DialogDescription>
-            اختر طول الكلمات التي تريد التخمين بها
-          </DialogDescription>
+          <DialogTitle>الإعدادات</DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <Label>طول الكلمة</Label>
-            <Select
-              defaultValue={wordLength.toString()}
-              onValueChange={(value) => {
-                const length = parseInt(value);
-                onWordLengthChange(length);
-                onClose(); // Close the dialog after changing the word length
+        <div className="flex flex-col space-y-4">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="hard-mode">وضع صعب</Label>
+            <Switch
+              id="hard-mode"
+              checked={hardMode}
+              onCheckedChange={onHardModeChange}
+            />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <Label htmlFor="word-length">طول الكلمة</Label>
+            <select
+              id="word-length"
+              value={localWordLength}
+              onChange={(e) => {
+                const newLength = parseInt(e.target.value);
+                setLocalWordLength(newLength);
+                onWordLengthChange(newLength);
               }}
+              className="border rounded p-1"
             >
-              <SelectTrigger>
-                <SelectValue placeholder="اختر طول الكلمة">
-                  {wordLength}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="3">3 حروف</SelectItem>
-                <SelectItem value="4">4 حروف</SelectItem>
-                <SelectItem value="5">5 حروف</SelectItem>
-                <SelectItem value="6">6 حروف</SelectItem>
-              </SelectContent>
-            </Select>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+            </select>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <Label>المظهر</Label>
+            <ThemeToggle />
           </div>
         </div>
       </DialogContent>
