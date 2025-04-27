@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import GameBoard from "@/components/GameBoard";
@@ -12,6 +13,7 @@ const Index = () => {
   // Game state
   const [targetWord, setTargetWord] = useState({ arabic: "" });
   const [wordLength, setWordLength] = useState(5);
+  const [hardMode, setHardMode] = useState(false);
   const [guesses, setGuesses] = useState<string[]>([]);
   const [currentGuess, setCurrentGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
@@ -67,6 +69,11 @@ const Index = () => {
   const handleWordLengthChange = (length: number) => {
     setWordLength(length);
     startNewGame(length);
+  };
+
+  // Handle hard mode change
+  const handleHardModeChange = (enabled: boolean) => {
+    setHardMode(enabled);
   };
 
   // Handle game completion
@@ -159,7 +166,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white" dir="rtl">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900" dir="rtl">
       <header className="bg-tunisia-red text-white py-4 shadow-md">
         <div className="container max-w-lg mx-auto px-4 flex justify-between items-center">
           <Button
@@ -210,7 +217,7 @@ const Index = () => {
         </div>
       </main>
 
-      <footer className="bg-gray-100 py-2 text-center text-sm text-gray-600">
+      <footer className="bg-gray-100 dark:bg-gray-800 py-2 text-center text-sm text-gray-600 dark:text-gray-400">
         <p>Tunisian Wordle &copy; 2025</p>
       </footer>
 
@@ -221,7 +228,10 @@ const Index = () => {
         hasWon={hasWon}
         guessCount={guesses.length}
         targetWord={targetWord.arabic}
-        handleNewGame={startNewGame}
+        handleNewGame={() => {
+          startNewGame();
+          setShowStats(false);
+        }}
       />
 
       <HowToPlay
@@ -232,6 +242,8 @@ const Index = () => {
       <Settings
         isOpen={showSettings}
         onClose={() => setShowSettings(false)}
+        hardMode={hardMode}
+        onHardModeChange={handleHardModeChange}
         wordLength={wordLength}
         onWordLengthChange={handleWordLengthChange}
       />
